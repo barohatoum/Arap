@@ -1,0 +1,158 @@
+/**
+ * Variables
+ */
+$base-body-font-family: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$base-heading-font-family: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$navbar-nav-font-family: "Work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+$color-black: #292F33;
+$color-blue: #55ACEE;
+$color-dark-grey: #66757F;
+$color-medium-grey: #8899A6;
+$color-grey: #CCD6DD;
+$color-light-grey: #E1E8ED;
+$color-white: #F5F8FA;
+
+/**
+ * Imports
+ */
+@import "../../bower_components/uikit/scss/uikit-mixins.scss";
+@import "../../bower_components/uikit/scss/uikit-variables.scss";
+@import "../../bower_components/uikit/scss/uikit.scss";
+
+/**
+ * SCSS
+ */
+header {
+	padding: 60px 0;
+	h1 {
+		color: $color-black;
+		font-weight: 300;
+		text-transform: uppercase;
+		margin: 0;
+	}
+	p {
+		color: $color-medium-grey;
+
+		a {
+			color: $color-blue;
+			&:hover {
+				text-decoration: none;
+				color: lighten($color-blue, 10%);
+			}
+		}
+	}
+}
+
+.new-project-link {
+	a {
+		color: $color-medium-grey;
+		background-color: $color-light-grey;
+		padding: 10px;
+		border-radius: 4px;
+		&:hover {
+			text-decoration: none;
+			color: $color-white;
+			background-color: $color-blue;
+		}
+	}
+}
+
+.notice {
+	background-color: $color-grey;
+	border-radius: 4px;
+	padding: 15px;
+	color: $color-white;
+	margin-top: 65px;
+}
+
+.new-project-form-container {
+	background-color: #fff;
+	position: absolute;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	form {
+		max-width: 980px;
+		box-sizing: border-box;
+		margin: 60px auto;
+		padding: 0 60px;
+		legend {
+			font-weight: 500;
+			text-transform: uppercase;
+			font-size: 24px;
+			line-height: 30px;
+			color: $color-black;
+			&:after {
+				content: none;
+			}
+		}
+
+		.uk-form-row {
+			margin-bottom: 35px;
+		}
+
+		input[type=text] {
+			font-size: 16px;
+			border: none;
+			border-bottom: 1px solid $color-light-grey;
+			width: 100%;
+			height: auto;
+			padding: 6px 0;
+			color: $color-dark-grey;
+			&:focus {
+				background-color: #fff;
+				border-bottom-color: $color-blue;
+			}
+		}
+
+		textarea {
+			width: 100%;
+			border: none;
+			border-left: 1px solid $color-light-grey;
+			height: 60px;
+			resize: none;
+			font-size: 16px;
+			padding: 0 0 0 6px;
+			color: $color-dark-grey;
+			&:focus {
+				background-color: #fff;
+				border-left-color: $color-blue;
+			}
+		}
+
+		select {
+			width: 100%;
+			border: none;
+			border-bottom: 1px solid $color-light-grey;
+			-webkit-border-radius: 0px;
+			&:focus {
+				background-color: #fff;
+				border-bottom-color: $color-blue;
+			}
+		}
+
+		.uk-form-help-block {
+			font-size: 12px;
+			line-height: 18px;
+			color: $color-medium-grey;
+			font-weight: 500;
+		}
+
+		button {
+			display: inline-block;
+			padding: 15px;
+			border: none;
+			background-color: #E74C3C;
+			color: $color-white;
+			border-radius: 4px;
+			font-size: 14px;
+			cursor: pointer;
+			&[type=submit] {
+				background-color: $color-blue;
+				font-weight: 500;
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+{
+  "name": "projects",
+  "version": "1",
+  "authors": [
+    "Ibrahim Hatoum <ibrahim.hatoum@tristanstyle.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "install": {
+    "sources": {
+      "jquery": {
+        "mapping": [
+          {"bower_components/jquery/dist/jquery.min.js": "assets/js/vendor/jquery.min.js"},
+          {"bower_components/jquery/dist/jquery.min.map": "assets/js/vendor/jquery.min.map"}
+        ]
+      },
+      "uikit": {
+        "mapping": [
+          {"bower_components/uikit/js/uikit.min.js": "assets/js/vendor/uikit.min.js"},
+          {"bower_components/uikit/fonts/fontawesome-webfont.eot": "assets/fonts/fontawesome-webfont.eot"},
+          {"bower_components/uikit/fonts/fontawesome-webfont.ttf": "assets/fonts/fontawesome-webfont.ttf"},
+          {"bower_components/uikit/fonts/fontawesome-webfont.woff": "assets/fonts/fontawesome-webfont.woff"},
+          {"bower_components/uikit/fonts/fontawesome-webfont.woff2": "assets/fonts/fontawesome-webfont.woff2"},
+          {"bower_components/uikit/fonts/FontAwesome.otf": "assets/fonts/FontAwesome.otf"}
+        ]
+      }
+    }
+  }
+}
