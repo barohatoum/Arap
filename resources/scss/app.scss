@@ -30,6 +30,9 @@ header {
 		font-weight: 300;
 		text-transform: uppercase;
 		margin: 0;
+		strong {
+			font-weight: 700;
+		}
 	}
 	p {
 		color: $color-medium-grey;

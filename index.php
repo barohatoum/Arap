@@ -3,14 +3,14 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<title>Projects</title>
+	<title>Araneum Projects</title>
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900">
 	<link rel="stylesheet" type="text/css" href="assets/css/app.css">
 </head>
 <body>
 	<div class="uk-container uk-container-center">
 		<header>
-			<h1 class="uk-h1">Projects</h1>
+			<h1 class="uk-h1">Araneum<strong>Projects</strong></h1>
 			<p>
 				All projects are developed and maintained by Ibrahim Hatoum.
 				<br>
@@ -26,15 +26,26 @@
 					<a href="#" id="create-new-project-link"><i class="uk-icon-plus uk-margin-small-right"></i>Create project</a>
 				</p>
 				<?php $projects = scandir('./../'); ?>
-				<?php $projects = array_filter($projects, function($value) { return !preg_match('/_|\.|projects/', $value); }); ?>
+				<?php $projects = array_filter($projects, function($value) { return !preg_match('/_|\.|araneum/', $value); }); ?>
 				<?php if (count($projects)) : ?>
-					<ul class="uk-list uk-list-space uk-list-line">
+					<ul class="uk-list uk-list-space uk-list-line uk-margin-large-top">
 						<?php foreach ($projects as $project) : ?>
 							<?php $project_info = (file_exists('../' . $project . '/project.json')) ? json_decode(file_get_contents('../' . $project . '/project.json')) : []; ?>
-							<li class="uk-clearfix">
-								<p><i class="uk-icon-globe uk-margin-small-right"></i><?= $project_info->{'project-title'}; ?></p>
-								<p><?= $project_info->{'project-description'}; ?></p>
-								<p class="uk-float-right"><a href="http://<?= $project; ?>.dev" target="_blank"><i class="uk-icon-external-link"></i></a></p>
+							<li>
+								<p>
+									<span class="title"><i class="uk-icon-globe uk-margin-small-right"></i><?= $project_info->title; ?></span>
+									<span class="description"><?= $project_info->description; ?></span>
+								</p>
+								<p>
+									<span>Developers</span>
+									<ul class="uk-list">
+										<?php foreach ($project_info->developers as $developer) : ?>
+											<li class="developer">
+												<?= $developer->name; ?> &lt;<?= $developer->email; ?>&gt;
+											</li>
+										<?php endforeach; ?>
+									</ul>
+								</p>
 							</li>
 						<?php endforeach; ?>
 					</ul>
